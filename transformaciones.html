@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Transformaciones-Sintaxis</title>
+    <style>
+         ::-webkit-scrollbar {
+            display: none;
+        }
+        
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .pelota {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            /*transition-property: width, height;
+            transition-duration: 1s;
+            transition-timing-function: ease;*/
+            transition: 500ms;
+            -moz-transition: 500ms;
+            -webkit-transition: 500ms;
+            -o-transition: 500ms;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .pelota.a {
+            background-color: brown;
+            left: 0;
+        }
+        
+        .pelota.b {
+            background: chartreuse;
+            right: 0;
+        }
+        
+        .canasta {
+            width: 80%;
+            height: 250px;
+            position: relative;
+            border: 1px dashed blue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: rotate(5deg) skew(10deg) translate(100px) scale(1.5);
+        }
+        /* .canasta:hover .pelota {
+            cursor: pointer;
+            width: 200px;
+            height: 200px;
+        } */
+        
+        .canasta:hover {
+            cursor: col-resize;
+        }
+        
+        .canasta:hover .pelota.a {
+            left: calc(50% - 100px);
+        }
+        
+        .canasta:hover .pelota.b {
+            right: calc(50% - 100px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="canasta">
+        <div class="pelota a">Hello</div>
+        <div class="pelota b">World!</div>
+    </div>
+</body>
+
+</html>

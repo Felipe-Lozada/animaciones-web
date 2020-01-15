@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Traansformaciones-rotar</title>
+    <style>
+         ::-webkit-scrollbar {
+            display: none;
+        }
+        
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }
+        
+        .container {
+            border: 1px dashed olivedrab;
+            width: 100%;
+        }
+        
+        .container:hover .cuadrado {
+            animation: square;
+            animation-play-state: paused;
+        }
+        /* .cuadrado:hover {
+            transform: rotate(45deg);
+        } */
+        
+        .cuadrado {
+            border-radius: 50%;
+            border: 1px solid red;
+            height: 200px;
+            width: 200px;
+            background: red;
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* animation-name: square, rebote; */
+            animation-duration: 3s, 300ms;
+            /* animation-delay: 1s; */
+            animation-iteration-count: infinite;
+            animation-timing-function: linear, ease-in-out;
+            animation-direction: alternate;
+            /* animation-fill-mode: forwards; */
+            position: relative;
+            transition: 3s;
+            will-change: opacity, ;
+            transform: scale(1.1);
+        }
+        
+        @keyframes square {
+            0% {
+                opacity: 1;
+                background: blue;
+                transform: translateX(20px);
+                left: 0;
+            }
+            100% {
+                opacity: 1;
+                background: red;
+                left: calc(100% - 240px);
+            }
+        }
+        
+        @keyframes rebote {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(100px) scale(1, .8);
+            }
+        }
+        
+        .cuadrado:hover {
+            opacity: 0;
+        }
+        
+        .cuadrado:hover>p {
+            border: 1px solid rebeccapurple;
+            transform: rotate3d(1, 1, 1, 45deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="cuadrado">
+            <p>Hello World!!</p>
+        </div>
+    </div>
+</body>
+
+</html>

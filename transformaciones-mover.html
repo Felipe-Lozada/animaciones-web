@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Traansformaciones-rotar</title>
+    <style>
+         ::-webkit-scrollbar {
+            display: none;
+        }
+        
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            perspective: 200px;
+            /* perspective-origin: top right; */
+            ;
+        }
+        
+        .container {
+            border: 1px dashed olivedrab;
+        }
+        
+        .container:hover .cuadrado {
+            /*transform: translateX(-100px);*/
+            /* transform: translateY(100px); */
+            /*transform: translateZ(100px);*/
+            transform: translate3d(-100px -80px -30px);
+        }
+        /* .cuadrado:hover {
+            transform: rotate(45deg);
+        } */
+        
+        .cuadrado {
+            border: 1px solid red;
+            height: 200px;
+            width: 200px;
+            background: #7dc900;
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 300ms;
+        }
+        
+        .cuadrado:hover>p {
+            border: 1px solid rebeccapurple;
+            transform: translate(-25%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="cuadrado">
+            <p>Hello World!!</p>
+        </div>
+    </div>
+</body>
+
+</html>
