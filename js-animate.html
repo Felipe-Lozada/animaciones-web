@@ -37,7 +37,7 @@
             cursor: pointer;
             box-shadow: inset 0 -.2em rgba(0, 0, 0, .2);
             outline: 0;
-            transition: .2;
+            transition: .2s;
             will-change: transform;
         }
         
@@ -59,14 +59,14 @@
     </div>
     <script>
         const $pelota = document.getElementById('ball');
-        const $animation = $pelota.animate([{
+        const animation = $pelota.animate([{
             transform: 'translateX(0)'
         }, {
             transform: 'translateX(450px)'
         }], {
             duration: 1000,
             delay: 1000,
-            direction: 'normal',
+            direction: 'alternate',
             easing: 'linear',
             iterations: Infinity,
             fill: 'forwards',
@@ -79,7 +79,16 @@
         const $stopButton = document.getElementById("stop");
         const $reverseButton = document.getElementById("reverse");
         $playButton.addEventListener('click', (event) => {
-
+            animation.play();
+        });
+        $pauseButton.addEventListener('click', (event) => {
+            animation.pause()
+        });
+        $stopButton.addEventListener('click', (event) => {
+            animation.cancel();
+        });
+        $reverseButton.addEventListener('click', (event) => {
+            animation.reverse();
         });
     </script>
 </body>
