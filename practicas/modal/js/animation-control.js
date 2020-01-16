@@ -1,0 +1,1 @@
+const $hiddeButton = document.getElementById("hide-modal");
